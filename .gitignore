@@ -1,0 +1,22 @@
+# Python関連
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints
+
+# Jupyter Notebook関連
+.ipynb_checkpoints/
+
+# Macの隠しファイル
+.DS_Store
+
+# VSCodeや他のエディタの設定
+.vscode/
+.idea/
+
+# 出力ファイルや一時ファイル
+*.log
+*.tmp
+
+# データファイル（必要に応じて）
+*.csv
+*.zip
