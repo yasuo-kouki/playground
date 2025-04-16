@@ -17,6 +17,26 @@ __pycache__/
 *.log
 *.tmp
 
-# データファイル（必要に応じて）
+# データファイル
 *.csv
+*.tsv
 *.zip
+*.gz
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# モデルファイル（pkl, h5, pt, etc.）
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.onnx
+*.sav
+*.tflite
+*.pb
+
+# その他大きなファイル
+*.npy
+*.npz
