@@ -21,10 +21,37 @@ kaggleで高順位を狙うかつ，技術の向上を狙う
 
 
 ## メモ
-（カテゴリ特徴量の補正）
-各ジャンルごとに('Genre')だけで['Host_Popularity_percentage']を集めて平均を計算する．
-その後辞書型に変換
-genre_to_weight = df.groupby('Genre')['Host_Popularity_percentage'].mean().to_dict()
+（特徴量）
+-Podcast_Name
+    極端に少ないデータは両方に確認されず処理の必要はなし
 
-df['Host_Popularity_by_Genre'] =  df['Host_Popularity_percentage'] * df['Genre'].map(genre_to_weight)
+-Episode_Title
+    極端に少ないデータは両方に確認されず処理の必要はなし
+
+-Episode_Length_minutes
+    train:150以下に基本のデータは分布しており，150以上は異常値
+    predict:419.298741	166854.502468と異常値が多い
+    trainとpredictの両方に異常値が存在するが，分布範囲を確認すると同じ用に分布している
+    predictの方が異常値に引っ張れている
+
+-Genre
+    trainとpredictの両方に分布に異常は観測されなかった
+
+-Publication_Day
+    trainとpredictの両方に分布に異常は観測されなかった
+
+-Host_Popularity_percentage
+    trainとpredictの両方に100以上の値が存在する
+    trianとpredictの両方に0の値の1個だけ存在する
+
+-Guest_Popularity_percentage
+    trainとpredictの両方に100以上の値が存在する
+    分布範囲を確認すると同じ用に分布している
+
+-Number_of_Ads
+    trainとpredictの両方に最大値に異常値がみられた
+    1.355852	4.274399	0.00	0.00	1.00	2.00	2063.00
+    
+-Episode_Sentiment
+    trainとpredictの両方に分布に異常は観測されなかった
 
